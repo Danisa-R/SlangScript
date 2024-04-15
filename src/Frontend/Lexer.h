@@ -2,7 +2,7 @@
 #include "llvm/IR/IRBuilder.h"
 #include "llvm/IR/Module.h"
 
-#include "Parser.h"
+using namespace std;
 
 enum class TokenType {
     IDENTIFIER,
@@ -80,8 +80,8 @@ struct Token {
 
 class Lexer {
 public:
-    Lexer(const string SourceCode): sourceCode(SourceCode), position(0) {}
-    Token GetNextToken(){}
+    Lexer(const string SourceCode): SourceCode(SourceCode), position(0) {}
+    Token GetNextToken();
 
 private:
     string SourceCode;
@@ -105,4 +105,4 @@ private:
     or underscore character is encountered */
     Token readToken();
 
-}
+};

@@ -4,10 +4,10 @@
 
 /* Lexer class breaks up input source code into tokens */
 
-Lexer::Lexer(const string SourceCode) : sourceCode(SourceCode), position(0) {}
+Lexer::Lexer(const string SourceCode) : SourceCode(SourceCode), position(0) {}
 
 /* Reads char from source code and recognizes tokens based on lexical rules */
-Token GetNextToken(){
+Token Lexer::GetNextToken(){
     // Tokenize the string
     while (peek() != '\0') {
         skipWhitespace();

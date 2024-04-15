@@ -12,10 +12,6 @@ using namespace std;
    lexer and determining whether the input conforms to the syntax rules of the SlangScript. 
 */
 
-
-// Parses string into an abstract syntax tree
-Parser::Parser(string SourceCode){}
-
 void Parser::Parse(){
 
 }
@@ -23,10 +19,33 @@ void Parser::Parse(){
 /* Checks token to see if it conforms syntax rules of current language 
    By generating Abstract Syntax Tree (AST)
 */
-bool ValidateTokenExpressions(char token)
+bool Parser::ValidateTokenExpressions(char token)
 {
     // todo: make a AST 
     // Implement a tree strucutre 
+    // Note: Typically the output of the front end is an AST
+    //       This output will be provided as input to our middle-layer/backend.
+    //       (AST is source code as tree structure)
+    auto validate = [](char token){
+        // count how many times a function variable component or prop
+        // is used in source code
+        // transform code from one syntax to another
+
+
+
+        /*
+        Ex: 2 + (4 * 10) Looks like this tree below:
+        
+         +
+        / \
+       /   *
+      2     \
+           / \
+          4  10
+        
+        */
+
+    };
    
 }
 
